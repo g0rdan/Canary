@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Canary.Battery
 {
-    interface IBattery
+    public interface IBattery
     {
         /// <summary>
         /// Shows state of charging. True if it's plugged to AC/USB
@@ -18,13 +18,26 @@ namespace Canary.Battery
         /// Gets charging state of battery
         /// </summary>
         ChargingState BatteryState { get; }
+        /// <summary>
+        /// Gets power source: AC, USB or wireless
+        /// </summary>
+        PowerSourceType PowerSource { get; }
     }
 
     public enum ChargingState
     {
         Unknown,
-        Unplugged,
+        Discharging,
         Charging,
         Full
+    }
+
+    public enum PowerSourceType
+    {
+        Unknown,
+        Battery,
+        USB,
+        AC,
+        Wireless
     }
 }
