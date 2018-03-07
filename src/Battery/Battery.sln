@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.Core", "Battery.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.iOS", "Battery.iOS\Battery.iOS.csproj", "{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.Droid", "Battery.Droid\Battery.Droid.csproj", "{6288917C-C18B-42FF-9485-384F2C5F23F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6288917C-C18B-42FF-9485-384F2C5F23F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6288917C-C18B-42FF-9485-384F2C5F23F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6288917C-C18B-42FF-9485-384F2C5F23F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6288917C-C18B-42FF-9485-384F2C5F23F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
