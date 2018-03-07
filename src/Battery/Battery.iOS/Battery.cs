@@ -33,7 +33,7 @@ namespace Canary.Battery.iOS
                 }
             }
         }
-
+        
         public PowerSourceType PowerSource
         {
             get
