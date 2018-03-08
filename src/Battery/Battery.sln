@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{04FE29DF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.iOS.Tests", "Tests\Battery.iOS.Tests\Battery.iOS.Tests.csproj", "{358B8066-7934-45F0-8686-95060A0B12A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.Droid.Tests", "Tests\Battery.Droid.Tests\Battery.Droid.Tests.csproj", "{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,18 @@ Global
 		{358B8066-7934-45F0-8686-95060A0B12A9}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{358B8066-7934-45F0-8686-95060A0B12A9}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{358B8066-7934-45F0-8686-95060A0B12A9}.Debug|iPhone.Build.0 = Debug|iPhone
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Release|iPhone.Build.0 = Release|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +94,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{358B8066-7934-45F0-8686-95060A0B12A9} = {04FE29DF-D5FC-4296-B575-3B67A0DAC880}
+		{430627A9-BC6A-4AA1-9920-03CA2AB87DF6} = {04FE29DF-D5FC-4296-B575-3B67A0DAC880}
 	EndGlobalSection
 EndGlobal
