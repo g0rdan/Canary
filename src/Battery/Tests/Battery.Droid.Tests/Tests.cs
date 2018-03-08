@@ -4,6 +4,9 @@ using NUnit.Framework;
 
 namespace Battery.Droid.Tests
 {
+    /// <summary>
+    /// These tests should run only on a real devices
+    /// </summary>
     [TestFixture]
     public class Tests
     {
@@ -26,9 +29,7 @@ namespace Battery.Droid.Tests
         public void CheckBatteryPowerType()
         {
             var batteryProvider = new Canary.Battery.Droid.Battery();
-            // if we're running on a real device it should be plugged and Apple SDK does not
-            // provide AC/USB thing. We can see only as AC.
-            Assert.True(batteryProvider.PowerSource == PowerSourceType.AC);
+            Assert.True(batteryProvider.PowerSource == PowerSourceType.USB);
         }
 
         [Test]
