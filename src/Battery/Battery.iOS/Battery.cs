@@ -53,5 +53,7 @@ namespace Canary.Battery.iOS
                 }
             }
         }
+
+        public IDictionary<string, string> AdditionalInformation => throw new NotImplementedException();
     }
 }

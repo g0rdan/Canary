@@ -22,6 +22,12 @@ namespace Canary.Battery
         /// Gets power source: AC, USB or wireless
         /// </summary>
         PowerSourceType PowerSource { get; }
+        /// <summary>
+        /// This property needs to show some additional
+        /// information about battery on a device, which could not be
+        /// represent as common information for many platforms.
+        /// </summary>
+        IDictionary<string, string> AdditionalInformation { get; }
     }
 
     public enum ChargingState

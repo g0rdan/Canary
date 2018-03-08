@@ -28,10 +28,10 @@ namespace Canary.Battery.Droid
 
                 using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
                 {
-                    using (var battery = Application.Context.RegisterReceiver(null, filter))
+                    using (var intent = Application.Context.RegisterReceiver(null, filter))
                     {
-                        var level = battery.GetIntExtra(BatteryManager.ExtraLevel, -1);
-                        var scale = battery.GetIntExtra(BatteryManager.ExtraScale, -1);
+                        var level = intent.GetIntExtra(BatteryManager.ExtraLevel, -1);
+                        var scale = intent.GetIntExtra(BatteryManager.ExtraScale, -1);
                         return level / (float)scale;
                     }
                 }
@@ -47,9 +47,9 @@ namespace Canary.Battery.Droid
 
                 using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
                 {
-                    using (var battery = Application.Context.RegisterReceiver(null, filter))
+                    using (var intent = Application.Context.RegisterReceiver(null, filter))
                     {
-                        var status = battery.GetIntExtra(BatteryManager.ExtraStatus, -1);
+                        var status = intent.GetIntExtra(BatteryManager.ExtraStatus, -1);
                         switch (status)
                         {
                             case (int)BatteryStatus.Charging:
@@ -79,9 +79,9 @@ namespace Canary.Battery.Droid
 
                 using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
                 {
-                    using (var battery = Application.Context.RegisterReceiver(null, filter))
+                    using (var intent = Application.Context.RegisterReceiver(null, filter))
                     {
-                        var chargePlug = battery.GetIntExtra(BatteryManager.ExtraPlugged, -1);
+                        var chargePlug = intent.GetIntExtra(BatteryManager.ExtraPlugged, -1);
                         
                         switch (chargePlug)
                         {
@@ -98,6 +98,33 @@ namespace Canary.Battery.Droid
                 }
             }
         }
+
+        public IDictionary<string, string> AdditionalInformation
+        {
+            get
+            {
+                if (!CheckBatteryPermissions())
+                    throw new CanaryException(exceptionMessage);
+                
+                var data = new Dictionary<string, string>();
+                data.Add("Temperature", GetBatteryTemperature().ToString(".##"));
+                return data;
+            }
+        }
+
+        #region private
+        float GetBatteryTemperature()
+        {
+            using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
+            {
+                using (var intent = Application.Context.RegisterReceiver(null, filter))
+                {
+                    return ((float)intent.GetIntExtra(BatteryManager.ExtraTemperature, 0)) / 10;
+                }
+            }
+        }
+
+        #endregion
 
         bool CheckBatteryPermissions()
         {
