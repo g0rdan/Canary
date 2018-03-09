@@ -7,7 +7,7 @@ using Windows.Devices.Power;
 
 namespace Canary.Battery.UWP
 {
-    public class Battery : IBattery
+    public class CnrBattery : ICnrBattery
     {
         public bool IsCharging => GetAggregateBatteriesReport().Status == Windows.System.Power.BatteryStatus.Charging;
 

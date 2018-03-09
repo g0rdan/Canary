@@ -8,7 +8,7 @@ using UIKit;
 
 namespace Canary.Battery.iOS
 {
-    public class Battery : IBattery
+    public class CnrBattery : ICnrBattery
     {
         public bool IsCharging => UIDevice.CurrentDevice.BatteryState == UIDeviceBatteryState.Charging;
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Canary.Battery
 {
-    public interface IBattery
+    public interface ICnrBattery
     {
         /// <summary>
         /// Shows state of charging. True if it's plugged to AC/USB

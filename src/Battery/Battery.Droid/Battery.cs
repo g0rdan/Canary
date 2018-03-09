@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace Canary.Battery.Droid
 {
-    public class Battery : IBattery
+    public class CnrBattery : ICnrBattery
     {
         string exceptionMessage = $"You need to add '{Android.Manifest.Permission.BatteryStats}' to AndroidManifest.xml";
 
