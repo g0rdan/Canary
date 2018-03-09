@@ -56,5 +56,8 @@ namespace Canary.Battery.iOS
 
         public IList<(string Key, string Value, string Description)> AdditionalInformation => 
             throw new NotImplementedException("iOS does not have additional information about battery");
+
+        public CnrBattery() =>
+            UIDevice.CurrentDevice.BatteryMonitoringEnabled = true;
     }
 }
