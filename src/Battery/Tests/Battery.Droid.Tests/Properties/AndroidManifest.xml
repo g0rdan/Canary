@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Battery.Droid.Tests" android:versionCode="1" android:versionName="1.0">
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="Battery.Droid.Tests">
+>>>>>>> 5aa0a572d77bbb2bc97a5a19720484a7025353f5
 	<uses-sdk />
 	<application android:label="Battery.Droid.Tests"></application>
 </manifest>

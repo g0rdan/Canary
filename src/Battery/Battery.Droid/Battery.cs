@@ -99,15 +99,17 @@ namespace Canary.Battery.Droid
             }
         }
 
-        public IDictionary<string, string> AdditionalInformation
+        public IList<(string Key, string Value, string Description)> AdditionalInformation
         {
             get
             {
                 if (!CheckBatteryPermissions())
                     throw new CanaryException(exceptionMessage);
                 
-                var data = new Dictionary<string, string>();
-                data.Add("Temperature", GetBatteryTemperature().ToString(".##"));
+                var data = new List<(string, string, string)>();
+                data.Add((nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(".##"), "containing the current battery temperature in celsius"));
+                data.Add((nameof(BatteryManager.ExtraTechnology), GetBatteryTechnology(), "describing the technology of the current battery"));
+                data.Add((nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(".##"), "containing the current battery voltage level"));
                 return data;
             }
         }
@@ -124,7 +126,27 @@ namespace Canary.Battery.Droid
             }
         }
 
-        #endregion
+        string GetBatteryTechnology()
+        {
+            using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
+            {
+                using (var intent = Application.Context.RegisterReceiver(null, filter))
+                {
+                    return intent.GetStringExtra(BatteryManager.ExtraTechnology);
+                }
+            }
+        }
+
+        float GetBatteryVoltage()
+        {
+            using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
+            {
+                using (var intent = Application.Context.RegisterReceiver(null, filter))
+                {
+                    return intent.GetIntExtra(BatteryManager.ExtraVoltage, -1);
+                }
+            }
+        }
 
         bool CheckBatteryPermissions()
         {
@@ -132,5 +154,6 @@ namespace Canary.Battery.Droid
             var res = Application.Context.CheckCallingOrSelfPermission(permission);
             return res == Permission.Granted;
         }
+        #endregion
     }
 }

@@ -5,4 +5,10 @@
     <RootNamespace>Canary.Battery</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Exceptions\CanaryNotImplementedException.cs" />
+  </ItemGroup>
 </Project>
