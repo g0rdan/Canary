@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sample.Core
+namespace Battery.Sample.Core
 {
     public class Class1
     {
