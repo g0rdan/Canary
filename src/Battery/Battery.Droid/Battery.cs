@@ -23,9 +23,6 @@ namespace Canary.Battery.Droid
         {
             get
             {
-                if (!CheckBatteryPermissions())
-                    throw new CanaryException(exceptionMessage);
-
                 using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
                 {
                     using (var intent = Application.Context.RegisterReceiver(null, filter))
@@ -42,9 +39,6 @@ namespace Canary.Battery.Droid
         {
             get
             {
-                if (!CheckBatteryPermissions())
-                    throw new CanaryException(exceptionMessage);
-
                 using (var filter = new IntentFilter(Intent.ActionBatteryChanged))
                 {
                     using (var intent = Application.Context.RegisterReceiver(null, filter))
@@ -71,9 +65,6 @@ namespace Canary.Battery.Droid
         {
             get
             {
-                if (!CheckBatteryPermissions())
-                    throw new CanaryException(exceptionMessage);
-
                 if (!IsCharging)
                     return PowerSourceType.Battery;
 
@@ -103,13 +94,10 @@ namespace Canary.Battery.Droid
         {
             get
             {
-                if (!CheckBatteryPermissions())
-                    throw new CanaryException(exceptionMessage);
-                
                 var data = new List<(string, string, string)>();
-                data.Add((nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(".##"), "containing the current battery temperature in celsius"));
-                data.Add((nameof(BatteryManager.ExtraTechnology), GetBatteryTechnology(), "describing the technology of the current battery"));
-                data.Add((nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(".##"), "containing the current battery voltage level"));
+                data.Add((nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(".##"), "Containing the current battery temperature in celsius"));
+                data.Add((nameof(BatteryManager.ExtraTechnology), GetBatteryTechnology(), "Describing the technology of the current battery"));
+                data.Add((nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(".##"), "Containing the current battery voltage level"));
                 return data;
             }
         }
@@ -148,6 +136,7 @@ namespace Canary.Battery.Droid
             }
         }
 
+        [Obsolete]
         bool CheckBatteryPermissions()
         {
             var permission = Android.Manifest.Permission.BatteryStats;
