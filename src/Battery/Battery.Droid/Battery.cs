@@ -95,9 +95,9 @@ namespace Canary.Battery.Droid
             get
             {
                 var data = new List<(string, string, string)>();
-                data.Add((nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(".##"), "Containing the current battery temperature in celsius"));
+                data.Add((nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(), "Containing the current battery temperature in celsius"));
                 data.Add((nameof(BatteryManager.ExtraTechnology), GetBatteryTechnology(), "Describing the technology of the current battery"));
-                data.Add((nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(".##"), "Containing the current battery voltage level"));
+                data.Add((nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(), "Containing the current battery voltage level"));
                 return data;
             }
         }
