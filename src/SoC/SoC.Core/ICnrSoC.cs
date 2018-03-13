@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SoC.Core
+namespace Canary.SoC
 {
     public interface ICnrSoC
     {

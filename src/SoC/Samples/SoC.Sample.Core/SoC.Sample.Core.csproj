@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Canary.SoC</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Class1.cs" />
+    <ProjectReference Include="..\..\SoC.Core\SoC.Core.csproj" />
   </ItemGroup>
 </Project>
