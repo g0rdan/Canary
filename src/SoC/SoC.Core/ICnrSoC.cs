@@ -16,7 +16,9 @@ namespace Canary.SoC
         /// <summary>
         /// Current frequency in MHz
         /// </summary>
-        float Frequency { get; }
+        float CurrentFrequency { get; }
+        float MinFrequency { get; }
+        float MaxFrequency { get; }
         /// <summary>
         /// Amount of cores in SoC
         /// </summary>

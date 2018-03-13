@@ -14,9 +14,25 @@ namespace Canary.SoC.Droid
 
         public string Model => CPUInfo["model name"];
 
-        public float Usage => throw new NotImplementedException();
+        public float Usage
+        {
+            get
+            {
+                var statistics = GetCpuUsageStatistic();
+                var user = statistics[0];
+                var system = statistics[1];
+                var idle = statistics[2];
+                var other = statistics[3];
+                var result = (user + system + idle + other) / 4f;
+                return result;
+            }
+        }
 
-        public float Frequency => throw new NotImplementedException();
+        public float CurrentFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
+
+        public float MinFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq");
+
+        public float MaxFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq");
 
         public int Cores => Runtime.GetRuntime().AvailableProcessors();
 
@@ -63,5 +79,81 @@ namespace Canary.SoC.Droid
                 return _cPUInfo;
             }
         }
+
+        // https://stackoverflow.com/questions/16963292/read-current-cpu-frequency/19858957#19858957
+        float GetFrequency(string path)
+        {
+            using (var reader = new RandomAccessFile(path, "r"))
+            {
+                float.TryParse(reader.ReadLine(), out var result);
+                return result / 1000;
+            }
+        }
+
+        #region CPU Usage
+        /// <summary>
+        /// https://stackoverflow.com/a/10269661/1466039
+        /// </summary>
+        /// <returns>integer Array with 4 elements: user, system, idle and other cpu usage in percentage.</returns>
+        int[] GetCpuUsageStatistic()
+        {
+            var tempString = ExecuteTop();
+            if (string.IsNullOrWhiteSpace(tempString))
+                return new int[4] { 0, 0, 0, 0 };
+
+            tempString = tempString.Replace(",", "");
+            tempString = tempString.Replace("User", "");
+            tempString = tempString.Replace("System", "");
+            tempString = tempString.Replace("IOW", "");
+            tempString = tempString.Replace("IRQ", "");
+            tempString = tempString.Replace("%", "");
+            for (int i = 0; i < 10; i++)
+            {
+                tempString = tempString.Replace("  ", " ");
+            }
+            tempString = tempString.Trim();
+            string[] myString = tempString.Split(' ');
+            int[] cpuUsageAsInt = new int[myString.Length];
+            for (int i = 0; i < myString.Length; i++)
+            {
+                myString[i] = myString[i].Trim();
+                cpuUsageAsInt[i] = int.Parse(myString[i]);
+            }
+            return cpuUsageAsInt;
+        }
+
+        string ExecuteTop()
+        {
+            Process p = null;
+            string returnString = null;
+            try
+            {
+                p = Runtime.GetRuntime().Exec("top -n 1");
+                using (var reader = new BufferedReader(new InputStreamReader(p.InputStream)))
+                {
+                    while (string.IsNullOrWhiteSpace(returnString))
+                    {
+                        returnString = reader.ReadLine();
+                    }
+                }
+            }
+            catch (IOException)
+            {
+                System.Diagnostics.Debug.Write("error in getting first line of top", "executeTop");
+            }
+            finally
+            {
+                try
+                {
+                    p.Destroy();
+                }
+                catch (IOException)
+                {
+                    System.Diagnostics.Debug.Write("error in closing and destroying top process", "executeTop");
+                }
+            }
+            return returnString;
+        }
+        #endregion
     }
 }
