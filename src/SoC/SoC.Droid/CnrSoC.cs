@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Java.IO;
 using Java.Lang;
 using Java.Util;
@@ -14,20 +16,6 @@ namespace Canary.SoC.Droid
 
         public string Model => CPUInfo["model name"];
 
-        public float Usage
-        {
-            get
-            {
-                var statistics = GetCpuUsageStatistic();
-                var user = statistics[0];
-                var system = statistics[1];
-                var idle = statistics[2];
-                var other = statistics[3];
-                var result = (user + system + idle + other) / 4f;
-                return result;
-            }
-        }
-
         public float CurrentFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
 
         public float MinFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq");
@@ -36,17 +24,50 @@ namespace Canary.SoC.Droid
 
         public int Cores => Runtime.GetRuntime().AvailableProcessors();
 
-        public IList<(string Key, string Value, string Description)> AdditionalInformation
+        public async Task<float> Usage (CancellationTokenSource cts = null)
         {
-            get
+            if (cts != null)
             {
-                var data = new List<(string Key, string Value, string Description)>();
-                foreach (var item in CPUInfo)
-                {
-                    data.Add((item.Key, item.Value, string.Empty));
-                }
-                return data;
+                return await Task.Factory.StartNew(GetSummaryUsage, cts.Token);
             }
+            else
+            {
+                return await Task.Factory.StartNew(GetSummaryUsage);
+            }
+
+        }
+
+        public async Task<IList<(string Key, string Value, string Description)>> AdditionalInformation(CancellationTokenSource cts = null)
+        {
+            if (cts != null)
+            {
+                return await Task.Factory.StartNew(GetStructedCPUInfo, cts.Token);
+            }
+            else
+            {
+                return await Task.Factory.StartNew(GetStructedCPUInfo);
+            }
+        }
+
+        // https://stackoverflow.com/questions/16963292/read-current-cpu-frequency/19858957#19858957
+        float GetFrequency(string path)
+        {
+            using (var reader = new RandomAccessFile(path, "r"))
+            {
+                float.TryParse(reader.ReadLine(), out var result);
+                return result / 1000;
+            }
+        }
+
+        #region Additional info
+        IList<(string Key, string Value, string Description)> GetStructedCPUInfo()
+        {
+            var data = new List<(string Key, string Value, string Description)>();
+            foreach (var item in CPUInfo)
+            {
+                data.Add((item.Key, item.Value, string.Empty));
+            }
+            return data;
         }
 
         Dictionary<string, string> _cPUInfo;
@@ -67,7 +88,7 @@ namespace Canary.SoC.Droid
                             var vals = s.NextLine().Split(new string[] { ": " }, StringSplitOptions.None);
                             if (vals.Length > 1)
                                 info.Add(vals[0].Trim(), vals[1].Trim());
-                        }    
+                        }
                     }
                 }
                 catch (System.Exception ex)
@@ -79,18 +100,19 @@ namespace Canary.SoC.Droid
                 return _cPUInfo;
             }
         }
-
-        // https://stackoverflow.com/questions/16963292/read-current-cpu-frequency/19858957#19858957
-        float GetFrequency(string path)
-        {
-            using (var reader = new RandomAccessFile(path, "r"))
-            {
-                float.TryParse(reader.ReadLine(), out var result);
-                return result / 1000;
-            }
-        }
+        #endregion
 
         #region CPU Usage
+        float GetSummaryUsage()
+        {
+            var statistics = GetCpuUsageStatistic();
+            var user = statistics[0];
+            var system = statistics[1];
+            var idle = statistics[2];
+            var other = statistics[3];
+            return (user + system + idle + other) / 4f;
+        }
+
         /// <summary>
         /// https://stackoverflow.com/a/10269661/1466039
         /// </summary>

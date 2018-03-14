@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Canary.SoC
 {
@@ -9,10 +11,6 @@ namespace Canary.SoC
         /// Name of chip
         /// </summary>
         string Model { get; }
-        /// <summary>
-        /// Current usage of central processor (from 0 to 1 in float) 
-        /// </summary>
-        float Usage { get; }
         /// <summary>
         /// Current frequency in MHz
         /// </summary>
@@ -24,10 +22,14 @@ namespace Canary.SoC
         /// </summary>
         int Cores { get; }
         /// <summary>
+        /// Current usage of central processor (from 0 to 1 in float) 
+        /// </summary>
+        Task<float> Usage(CancellationTokenSource cts = null);
+        /// <summary>
         /// This property needs to show some additional
         /// information about SoC on a device, which could not be
         /// represent as common information for many platforms.
         /// </summary>
-        IList<(string Key, string Value, string Description)> AdditionalInformation { get; }
+        Task<IList<(string Key, string Value, string Description)>> AdditionalInformation(CancellationTokenSource cts = null);
     }
 }
