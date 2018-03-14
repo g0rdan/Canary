@@ -10,17 +10,27 @@ namespace Canary.SoC.Droid
 {
     public class CnrSoC : ICnrSoC
     {
-        public CnrSoC()
+        const string MODEL_NAME_KEY = "model name";
+        const string CURR_FREQUENCY_PATH = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq";
+        const string MIN_FREQUENCY_PATH = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq";
+        const string MAX_FREQUENCY_PATH = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq";
+        const string CPU_INFO_PATH = "/proc/cpuinfo";
+
+        public string Model
         {
+            get
+            {
+                if (CPUInfo.ContainsKey(MODEL_NAME_KEY))
+                    return CPUInfo[MODEL_NAME_KEY];
+                return string.Empty;
+            }
         }
 
-        public string Model => CPUInfo["model name"];
+        public float CurrentFrequency => GetFrequency(CURR_FREQUENCY_PATH);
 
-        public float CurrentFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq");
+        public float MinFrequency => GetFrequency(MIN_FREQUENCY_PATH);
 
-        public float MinFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq");
-
-        public float MaxFrequency => GetFrequency("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq");
+        public float MaxFrequency => GetFrequency(MAX_FREQUENCY_PATH);
 
         public int Cores => Runtime.GetRuntime().AvailableProcessors();
 
@@ -81,7 +91,7 @@ namespace Canary.SoC.Droid
                 var info = new Dictionary<string, string>();
                 try
                 {
-                    using (var s = new Scanner(new File("/proc/cpuinfo")))
+                    using (var s = new Scanner(new File(CPU_INFO_PATH)))
                     {
                         while (s.HasNextLine)
                         {
