@@ -24,7 +24,7 @@ namespace Canary.SoC
         /// <summary>
         /// Current usage of central processor (from 0 to 1 in float) 
         /// </summary>
-        Task<float> GetUsageAsync(CancellationTokenSource cts = null);
+        Task<UsageInformation> GetUsageAsync(CancellationTokenSource cts = null);
         /// <summary>
         /// This property needs to show some additional
         /// information about SoC on a device, which could not be

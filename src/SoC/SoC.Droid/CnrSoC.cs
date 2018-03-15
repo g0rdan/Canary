@@ -35,7 +35,7 @@ namespace Canary.SoC.Droid
 
         public int Cores => Runtime.GetRuntime().AvailableProcessors();
 
-        public async Task<float> GetUsageAsync (CancellationTokenSource cts = null)
+        public async Task<UsageInformation> GetUsageAsync (CancellationTokenSource cts = null)
         {
             if (cts != null)
             {
@@ -118,14 +118,16 @@ namespace Canary.SoC.Droid
         #endregion
 
         #region CPU Usage
-        float GetSummaryUsage()
+        UsageInformation GetSummaryUsage()
         {
             var statistics = GetCpuUsageStatistic();
-            var user = statistics[0];
-            var system = statistics[1];
-            var idle = statistics[2];
-            var other = statistics[3];
-            return (user + system + idle + other) / 4f;
+            return new UsageInformation
+            {
+                User = statistics[0],
+                System = statistics[1],
+                Idle = statistics[2],
+                Other = statistics[3]
+            };
         }
 
         /// <summary>

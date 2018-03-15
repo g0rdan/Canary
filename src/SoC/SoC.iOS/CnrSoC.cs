@@ -28,7 +28,7 @@ namespace Canary.SoC.iOS
             throw new NotImplementedException();
         }
 
-        public Task<float> GetUsageAsync(CancellationTokenSource cts = null)
+        public Task<UsageInformation> GetUsageAsync(CancellationTokenSource cts = null)
         {
             throw new NotImplementedException();
         }
