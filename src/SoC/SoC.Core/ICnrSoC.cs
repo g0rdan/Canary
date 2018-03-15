@@ -24,12 +24,12 @@ namespace Canary.SoC
         /// <summary>
         /// Current usage of central processor (from 0 to 1 in float) 
         /// </summary>
-        Task<float> Usage(CancellationTokenSource cts = null);
+        Task<float> GetUsageAsync(CancellationTokenSource cts = null);
         /// <summary>
         /// This property needs to show some additional
         /// information about SoC on a device, which could not be
         /// represent as common information for many platforms.
         /// </summary>
-        Task<IList<(string Key, string Value, string Description)>> AdditionalInformation(CancellationTokenSource cts = null);
+        Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationTokenSource cts = null);
     }
 }

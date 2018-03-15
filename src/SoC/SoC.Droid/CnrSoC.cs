@@ -15,6 +15,7 @@ namespace Canary.SoC.Droid
         const string MIN_FREQUENCY_PATH = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq";
         const string MAX_FREQUENCY_PATH = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq";
         const string CPU_INFO_PATH = "/proc/cpuinfo";
+        const string TOP_COMMAND = "top -n 1";
 
         public string Model
         {
@@ -34,28 +35,28 @@ namespace Canary.SoC.Droid
 
         public int Cores => Runtime.GetRuntime().AvailableProcessors();
 
-        public async Task<float> Usage (CancellationTokenSource cts = null)
+        public async Task<float> GetUsageAsync (CancellationTokenSource cts = null)
         {
             if (cts != null)
             {
-                return await Task.Factory.StartNew(GetSummaryUsage, cts.Token);
+                return await Task.Factory.StartNew(GetSummaryUsage, cts.Token).ConfigureAwait(false);
             }
             else
             {
-                return await Task.Factory.StartNew(GetSummaryUsage);
+                return await Task.Factory.StartNew(GetSummaryUsage).ConfigureAwait(false);
             }
 
         }
 
-        public async Task<IList<(string Key, string Value, string Description)>> AdditionalInformation(CancellationTokenSource cts = null)
+        public async Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationTokenSource cts = null)
         {
             if (cts != null)
             {
-                return await Task.Factory.StartNew(GetStructedCPUInfo, cts.Token);
+                return await Task.Factory.StartNew(GetStructedCPUInfo, cts.Token).ConfigureAwait(false);
             }
             else
             {
-                return await Task.Factory.StartNew(GetStructedCPUInfo);
+                return await Task.Factory.StartNew(GetStructedCPUInfo).ConfigureAwait(false);
             }
         }
 
@@ -70,12 +71,16 @@ namespace Canary.SoC.Droid
         }
 
         #region Additional info
-        IList<(string Key, string Value, string Description)> GetStructedCPUInfo()
+        List<AdditionalInformation> GetStructedCPUInfo()
         {
-            var data = new List<(string Key, string Value, string Description)>();
+            var data = new List<AdditionalInformation>();
             foreach (var item in CPUInfo)
             {
-                data.Add((item.Key, item.Value, string.Empty));
+                data.Add(new AdditionalInformation {
+                    Title = item.Key,
+                    Value = item.Value,
+                    Description = string.Empty
+                });
             }
             return data;
         }
@@ -160,7 +165,7 @@ namespace Canary.SoC.Droid
             string returnString = null;
             try
             {
-                p = Runtime.GetRuntime().Exec("top -n 1");
+                p = Runtime.GetRuntime().Exec(TOP_COMMAND);
                 using (var reader = new BufferedReader(new InputStreamReader(p.InputStream)))
                 {
                     while (string.IsNullOrWhiteSpace(returnString))

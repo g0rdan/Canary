@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using CoreFoundation;
+
 
 namespace Canary.SoC.iOS
 {
@@ -21,12 +23,12 @@ namespace Canary.SoC.iOS
 
         public int Cores => throw new NotImplementedException();
 
-        public Task<IList<(string Key, string Value, string Description)>> AdditionalInformation(CancellationTokenSource cts = null)
+        public Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationTokenSource cts = null)
         {
             throw new NotImplementedException();
         }
 
-        public Task<float> Usage(CancellationTokenSource cts = null)
+        public Task<float> GetUsageAsync(CancellationTokenSource cts = null)
         {
             throw new NotImplementedException();
         }
