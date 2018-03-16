@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using CoreFoundation;
-
+using Foundation;
 
 namespace Canary.SoC.iOS
 {
@@ -21,7 +21,7 @@ namespace Canary.SoC.iOS
 
         public float MaxFrequency => throw new NotImplementedException();
 
-        public int Cores => throw new NotImplementedException();
+        public int Cores => (int)NSProcessInfo.ProcessInfo.ActiveProcessorCount;
 
         public Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationTokenSource cts = null)
         {
