@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CoreFoundation;
 using Foundation;
 
-namespace Canary.SoC.iOS
+namespace Canary.SoC
 {
     public class CnrSoC : ICnrSoC
     {

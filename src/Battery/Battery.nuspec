@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Shows certain information about device battery.</description>
     <summary>Shows certain information about device battery.</summary>
-    <tags>xamarin battery monodroid Xamarin.iOS10 ios fingerprint Xamarin.Android android uwp</tags>
+    <tags>xamarin battery monodroid Xamarin.iOS10 ios Xamarin.Android android uwp</tags>
     <iconUrl>https://github.com/g0rdan/Canary/blob/master/logo.png</iconUrl>
     <releaseNotes>
       [0.9]

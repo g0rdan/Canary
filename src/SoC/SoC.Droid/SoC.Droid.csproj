@@ -6,7 +6,7 @@
     <ProjectGuid>{CF28EC36-EC00-4148-94D6-AA85CB231319}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Canary.SoC.Droid</RootNamespace>
+    <RootNamespace>Canary.SoC</RootNamespace>
     <AssemblyName>SoC.Droid</AssemblyName>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>

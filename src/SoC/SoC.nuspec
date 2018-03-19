@@ -1,0 +1,38 @@
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Canary.SoC</id>
+    <version>0.9</version>
+    <title>CPU/GPU information for Xamarin</title>
+    <authors>Denis Gordin</authors>
+    <owners>Denis Gordin</owners>
+    <licenseUrl>https://github.com/g0rdan/Canary/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/g0rdan/Canary</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Shows certain information about CPU/GPU on a device.</description>
+    <summary>Shows certain information about CPU/GPU on a device.</summary>
+    <tags>xamarin cpu gpu soc monodroid Xamarin.iOS10 ios Xamarin.Android android uwp</tags>
+    <iconUrl>https://github.com/g0rdan/Canary/blob/master/logo.png</iconUrl>
+    <releaseNotes>
+      [0.9]
+      - test
+    </releaseNotes>
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="NETStandard.Library" version="2.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <!--Core-->
+    <file src="SoC.Core\bin\Release\netstandard2.0\SoC.Core.*" target="lib\netstandard2.0" />
+    <!--Xamarin.iOS-->
+    <file src="SoC.iOS\bin\Release\SoC.Core.*" target="lib\Xamarin.iOS10" />
+    <file src="SoC.iOS\bin\Release\SoC.iOS.*" target="lib\Xamarin.iOS10" />
+    <!--Xamarin.Android-->
+    <file src="SoC.Droid\bin\Release\SoC.Core.*" target="lib\MonoAndroid10" />
+    <file src="SoC.Droid\bin\Release\SoC.Droid.*" target="lib\MonoAndroid10" />
+    <!--UWP-->
+    <file src="SoC.UWP\bin\Release\SoC.Core.*" target="lib\UAP10" /> 
+    <file src="SoC.UWP\bin\Release\SoC.UWP.*" target="lib\UAP10" /> 
+  </files>
+</package>
