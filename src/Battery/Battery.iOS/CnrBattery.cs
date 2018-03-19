@@ -6,7 +6,7 @@ using System.Text;
 using Foundation;
 using UIKit;
 
-namespace Canary.Battery.iOS
+namespace Canary.Battery
 {
     public class CnrBattery : ICnrBattery
     {
