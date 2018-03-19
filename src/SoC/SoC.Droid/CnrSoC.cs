@@ -6,7 +6,7 @@ using Java.IO;
 using Java.Lang;
 using Java.Util;
 
-namespace Canary.SoC.Droid
+namespace Canary.SoC
 {
     public class CnrSoC : ICnrSoC
     {

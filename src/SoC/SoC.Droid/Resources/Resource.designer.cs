@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Canary.SoC.Droid.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Canary.SoC.Resource", IsApplication=false)]
 
-namespace Canary.SoC.Droid
+namespace Canary.SoC
 {
 	
 	

@@ -8,7 +8,7 @@
     <ProjectGuid>{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Canary.Battery.iOS</RootNamespace>
+    <RootNamespace>Canary.Battery</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Battery.iOS</AssemblyName>
   </PropertyGroup>
@@ -40,8 +40,11 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Battery.cs" />
+    <Compile Include="CnrBattery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Battery.Core\CanaryBattery.cs">
+      <Link>CanaryBattery.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Battery.Core\Battery.Core.csproj">

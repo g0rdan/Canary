@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Power;
 
-namespace Canary.Battery.UWP
+namespace Canary.Battery
 {
     public class CnrBattery : ICnrBattery
     {

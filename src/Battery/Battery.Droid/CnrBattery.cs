@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Canary.Battery.Droid
+namespace Canary.Battery
 {
     public class CnrBattery : ICnrBattery
     {

@@ -6,7 +6,7 @@
     <ProjectGuid>{01F41055-3089-453A-8B5F-60853841F7A5}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>Canary.SoC.iOS</RootNamespace>
+    <RootNamespace>Canary.SoC</RootNamespace>
     <AssemblyName>SoC.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>

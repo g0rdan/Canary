@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoC.iOS", "SoC.iOS\SoC.iOS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoC.Sample.iOS", "Samples\SoC.Sample.iOS\SoC.Sample.iOS.csproj", "{C59837FA-1F24-4271-9CE9-3374A67BABE2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{E14B797F-FFA1-4D8A-8A94-FBA18182ED13}"
+	ProjectSection(SolutionItems) = preProject
+		SoC.nuspec = SoC.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
