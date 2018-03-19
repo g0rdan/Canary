@@ -40,7 +40,7 @@ namespace Battery.Sample.UWP
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            Sample.Core.Battery.Instance = new Canary.Battery.UWP.CnrBattery();
+            Sample.Core.Battery.Instance = new Canary.Battery.CnrBattery();
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
