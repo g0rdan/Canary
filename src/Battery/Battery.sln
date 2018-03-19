@@ -27,9 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.Sample.Droid", "Sam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Battery.Sample.iOS", "Samples\Battery.Sample.iOS\Battery.Sample.iOS.csproj", "{349FD485-43CF-473B-BE06-EE955166F832}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{E39846A5-31C2-436E-8440-1708CC8417AA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{6AA8C02F-6218-4E60-9A04-BE6F5FC7DF85}"
 	ProjectSection(SolutionItems) = preProject
-		Build\CanaryBattery.nuspec = Build\CanaryBattery.nuspec
+		Battery.nuspec = Battery.nuspec
 	EndProjectSection
 EndProject
 Global
