@@ -113,6 +113,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -123,18 +124,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Battery.Core\Battery.Core.csproj">
-      <Project>{7EC09488-40E9-46C1-826A-0D680781BB5E}</Project>
-      <Name>Battery.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Battery.iOS\Battery.iOS.csproj">
-      <Project>{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}</Project>
-      <Name>Battery.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Battery.Sample.Core\Battery.Sample.Core.csproj">
       <Project>{701FBF92-D2E9-40EE-8FB4-6C59EB8A93AC}</Project>
       <Name>Battery.Sample.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>

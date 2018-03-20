@@ -24,15 +24,17 @@
   </metadata>
   <files>
     <!--Core-->
-    <file src="Battery.Core\bin\Release\netstandard2.0\Battery.Core.*" target="lib\netstandard2.0" />
+    
+    <file src="Battery.Abstraction\bin\Release\netstandard2.0\Battery.Abstraction.*" target="lib\netstandard2.0" />
+    <file src="Battery\bin\Release\netstandard2.0\Battery.*" target="lib\netstandard2.0" />
     <!--Xamarin.iOS-->
-    <file src="Battery.iOS\bin\Release\Battery.Core.*" target="lib\Xamarin.iOS10" />
+    <file src="Battery.Abstraction\bin\Release\netstandard2.0\Battery.Abstraction.*" target="lib\netstandard2.0" />
     <file src="Battery.iOS\bin\Release\Battery.iOS.*" target="lib\Xamarin.iOS10" />
     <!--Xamarin.Android-->
-    <file src="Battery.Droid\bin\Release\Battery.Core.*" target="lib\MonoAndroid10" />
+    <file src="Battery.Abstraction\bin\Release\netstandard2.0\Battery.Abstraction.*" target="lib\netstandard2.0" />
     <file src="Battery.Droid\bin\Release\Battery.Droid.*" target="lib\MonoAndroid10" />
     <!--UWP-->
-    <file src="Battery.UWP\bin\Release\Battery.Core.*" target="lib\UAP10" /> 
+    <file src="Battery.Abstraction\bin\Release\netstandard2.0\Battery.Abstraction.*" target="lib\netstandard2.0" />
     <file src="Battery.UWP\bin\Release\Battery.UWP.*" target="lib\UAP10" /> 
   </files>
 </package>

@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <Compile Remove="Exceptions\CanaryNotImplementedException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Exceptions\CanaryNotImplementedException.cs" />
+    <ProjectReference Include="..\Battery.Abstraction\Battery.Abstraction.csproj" />
   </ItemGroup>
 </Project>

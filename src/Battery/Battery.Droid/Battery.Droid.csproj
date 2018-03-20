@@ -47,17 +47,14 @@
     <Compile Include="CnrBattery.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\Battery.Core\CanaryBattery.cs">
-      <Link>CanaryBattery.cs</Link>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Battery.Core\Battery.Core.csproj">
-      <Project>{7ec09488-40e9-46c1-826a-0d680781bb5e}</Project>
-      <Name>Battery.Core</Name>
+    <ProjectReference Include="..\Battery.Abstraction\Battery.Abstraction.csproj">
+      <Project>{9F47CEA9-A64C-4D63-8BE0-BDE38BC060E5}</Project>
+      <Name>Battery.Abstraction</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

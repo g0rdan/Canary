@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Canary.Battery</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Canary.Battery" Version="0.9.0" />
+    <Compile Remove="Class1.cs" />
   </ItemGroup>
 </Project>

@@ -64,17 +64,13 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Battery.Core\Battery.Core.csproj">
-      <Project>{7EC09488-40E9-46C1-826A-0D680781BB5E}</Project>
-      <Name>Battery.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Battery.Droid\Battery.Droid.csproj">
       <Project>{6288917C-C18B-42FF-9485-384F2C5F23F9}</Project>
       <Name>Battery.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Battery.iOS.Tests\Battery.iOS.Tests.csproj">
-      <Project>{358B8066-7934-45F0-8686-95060A0B12A9}</Project>
-      <Name>Battery.iOS.Tests</Name>
+    <ProjectReference Include="..\..\Battery.Abstraction\Battery.Abstraction.csproj">
+      <Project>{9F47CEA9-A64C-4D63-8BE0-BDE38BC060E5}</Project>
+      <Name>Battery.Abstraction</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
