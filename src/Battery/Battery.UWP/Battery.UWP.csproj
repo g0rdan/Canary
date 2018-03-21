@@ -106,9 +106,6 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\Battery.Core\CanaryBattery.cs">
-      <Link>CanaryBattery.cs</Link>
-    </Compile>
     <Compile Include="CnrBattery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Battery.UWP.rd.xml" />
@@ -123,6 +120,11 @@
       <Project>{7ec09488-40e9-46c1-826a-0d680781bb5e}</Project>
       <Name>Battery.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Battery\CanaryBattery.cs">
+      <Link>CanaryBattery.cs</Link>
+    </None>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
