@@ -15,7 +15,7 @@ namespace Battery.Sample.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            Sample.Core.Battery.Instance = new Canary.Battery.CnrBattery();
+            Sample.Core.Core.Instance = new Canary.Battery.CnrBattery();
         }
 
         public override void DidReceiveMemoryWarning()
