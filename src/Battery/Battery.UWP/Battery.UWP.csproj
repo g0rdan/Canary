@@ -116,15 +116,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Battery.Core\Battery.Core.csproj">
-      <Project>{7ec09488-40e9-46c1-826a-0d680781bb5e}</Project>
-      <Name>Battery.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\Battery\CanaryBattery.cs">
       <Link>CanaryBattery.cs</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Battery.Abstraction\Battery.Abstraction.csproj">
+      <Project>{9f47cea9-a64c-4d63-8be0-bde38bc060e5}</Project>
+      <Name>Battery.Abstraction</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
