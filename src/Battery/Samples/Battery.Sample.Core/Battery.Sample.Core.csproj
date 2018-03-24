@@ -1,11 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.5</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Battery.Core\Battery.Core.csproj" />
+    <PackageReference Include="Canary.Battery" Version="0.9.6" />
   </ItemGroup>
-
 </Project>

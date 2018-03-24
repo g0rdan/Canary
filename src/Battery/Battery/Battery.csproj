@@ -3,12 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Canary.Battery</RootNamespace>
+    <ApplicationIcon />
+    <Win32Resource />
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Exceptions\" />
+    <Compile Remove="Exceptions\CanaryNotImplementedException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Exceptions\CanaryNotImplementedException.cs" />
+    <ProjectReference Include="..\Battery.Abstraction\Battery.Abstraction.csproj" />
   </ItemGroup>
 </Project>

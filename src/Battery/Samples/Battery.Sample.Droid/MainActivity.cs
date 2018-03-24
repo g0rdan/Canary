@@ -30,7 +30,7 @@ namespace Battery.Sample.Droid
 
             CheckBatteryPermission();
 
-            Sample.Core.Battery.Instance = new Canary.Battery.Droid.CnrBattery();
+            Sample.Core.Core.Instance = new Canary.Battery.Droid.CnrBattery();
         }
 
         void CheckBatteryPermission()
@@ -62,7 +62,7 @@ namespace Battery.Sample.Droid
             {
                 if (grantResults.Length > 0 && grantResults[0] == Permission.Granted)
                 {
-                    Sample.Core.Battery.Instance = new Canary.Battery.Droid.CnrBattery();
+                    Sample.Core.Core.Instance = new Canary.Battery.Droid.CnrBattery();
                 }
             }
         }

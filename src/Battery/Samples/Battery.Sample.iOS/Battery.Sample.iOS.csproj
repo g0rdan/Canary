@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,6 +9,8 @@
     <RootNamespace>Battery.Sample.iOS</RootNamespace>
     <AssemblyName>Battery.Sample.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -90,6 +92,12 @@
     </MtouchVerbosity>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Battery.Abstraction, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Canary.Battery.0.9.6\lib\Xamarin.iOS10\Battery.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Battery.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Canary.Battery.0.9.6\lib\Xamarin.iOS10\Battery.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -113,6 +121,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -123,18 +132,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Battery.Core\Battery.Core.csproj">
-      <Project>{7EC09488-40E9-46C1-826A-0D680781BB5E}</Project>
-      <Name>Battery.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Battery.iOS\Battery.iOS.csproj">
-      <Project>{AE3F6D66-B079-41BE-9DAB-36F2ACACDE8A}</Project>
-      <Name>Battery.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Battery.Sample.Core\Battery.Sample.Core.csproj">
-      <Project>{701FBF92-D2E9-40EE-8FB4-6C59EB8A93AC}</Project>
+      <Project>{701fbf92-d2e9-40ee-8fb4-6c59eb8a93ac}</Project>
       <Name>Battery.Sample.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
 </Project>

@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Battery.Sample.Droid</RootNamespace>
     <AssemblyName>Battery.Sample.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -98,10 +98,6 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Battery.Core\Battery.Core.csproj">
-      <Project>{7EC09488-40E9-46C1-826A-0D680781BB5E}</Project>
-      <Name>Battery.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Battery.Sample.Core\Battery.Sample.Core.csproj">
       <Project>{701FBF92-D2E9-40EE-8FB4-6C59EB8A93AC}</Project>
       <Name>Battery.Sample.Core</Name>

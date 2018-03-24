@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Battery.Sample.Core;
+using System;
 
 using UIKit;
 
@@ -15,7 +16,7 @@ namespace Battery.Sample.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            Sample.Core.Battery.Instance = new Canary.Battery.iOS.CnrBattery();
+            var percent = SomeService.GetBatteryPercentage();
         }
 
         public override void DidReceiveMemoryWarning()
