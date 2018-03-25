@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Canary.Battery
+namespace Canary.Battery.Abstraction
 {
     public interface ICnrBattery
     {

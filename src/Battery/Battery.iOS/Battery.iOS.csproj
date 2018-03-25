@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Canary.Battery</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Battery.iOS</AssemblyName>
+    <AssemblyName>Canary.Battery</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

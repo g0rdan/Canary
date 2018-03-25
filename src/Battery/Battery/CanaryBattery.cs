@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Canary.Battery.Abstraction;
+using System;
 namespace Canary.Battery
 {
     public static class CanaryBattery
