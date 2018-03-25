@@ -5,6 +5,7 @@
     <RootNamespace>Canary.Battery</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
+    <AssemblyName>Canary.Battery</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

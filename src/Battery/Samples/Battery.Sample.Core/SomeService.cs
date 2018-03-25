@@ -9,7 +9,8 @@ namespace Battery.Sample.Core
     {
         public static int GetBatteryPercentage()
         {
-            return (int)(CanaryBattery.Current.BatteryLevel * 100);
+            var percent = (int)(CanaryBattery.Current.BatteryLevel * 100);
+            return percent;
         }
     }
 }

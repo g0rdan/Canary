@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Canary.Battery</RootNamespace>
+    <RootNamespace>Canary.Battery.Abstraction</RootNamespace>
+    <AssemblyName>Canary.Battery.Abstraction</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
