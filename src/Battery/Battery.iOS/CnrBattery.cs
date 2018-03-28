@@ -54,7 +54,7 @@ namespace Canary.Battery
             }
         }
 
-        public IList<(string Key, string Value, string Description)> AdditionalInformation => 
+        public IList<AdditionalInformation> AdditionalInformation => 
             throw new NotImplementedException("iOS does not have additional information about battery");
 
         public CnrBattery() =>

@@ -91,14 +91,14 @@ namespace Canary.Battery
             }
         }
 
-        public IList<(string Key, string Value, string Description)> AdditionalInformation
+        public IList<AdditionalInformation> AdditionalInformation
         {
             get
             {
-                var data = new List<(string, string, string)>();
-                data.Add((nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(), "Containing the current battery temperature in celsius"));
-                data.Add((nameof(BatteryManager.ExtraTechnology), GetBatteryTechnology(), "Describing the technology of the current battery"));
-                data.Add((nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(), "Containing the current battery voltage level"));
+                var data = new List<AdditionalInformation>();
+                data.Add(new AdditionalInformation(nameof(BatteryManager.ExtraTemperature), GetBatteryTemperature().ToString(), "Containing the current battery temperature in celsius"));
+                data.Add(new AdditionalInformation(nameof(BatteryManager.ExtraTechnology), GetBatteryTechnology().ToString(), "Describing the technology of the current battery"));
+                data.Add(new AdditionalInformation(nameof(BatteryManager.ExtraVoltage), GetBatteryVoltage().ToString(), "Containing the current battery voltage level"));
                 return data;
             }
         }
