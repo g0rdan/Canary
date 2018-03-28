@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Canary.Battery" Version="0.9.6" />
+    <PackageReference Include="Canary.Battery" Version="0.9.8" />
   </ItemGroup>
 </Project>

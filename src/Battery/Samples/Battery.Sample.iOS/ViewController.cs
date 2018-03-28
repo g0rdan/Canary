@@ -16,7 +16,7 @@ namespace Battery.Sample.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            var percent = SomeService.GetBatteryPercentage();
+            var percent = BatteryService.GetBatteryPercentage();
         }
 
         public override void DidReceiveMemoryWarning()

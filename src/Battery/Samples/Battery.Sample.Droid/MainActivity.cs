@@ -5,6 +5,7 @@ using Android;
 using Android.Content.PM;
 using Android.Support.V4.Content;
 using Android.Support.V4.App;
+using Battery.Sample.Core;
 
 namespace Battery.Sample.Droid
 {
@@ -30,7 +31,8 @@ namespace Battery.Sample.Droid
 
             CheckBatteryPermission();
 
-            Sample.Core.Core.Instance = new Canary.Battery.Droid.CnrBattery();
+            var percent = Core.BatteryService.GetBatteryPercentage();
+
         }
 
         void CheckBatteryPermission()
@@ -62,7 +64,7 @@ namespace Battery.Sample.Droid
             {
                 if (grantResults.Length > 0 && grantResults[0] == Permission.Granted)
                 {
-                    Sample.Core.Core.Instance = new Canary.Battery.Droid.CnrBattery();
+                    var percent = Core.BatteryService.GetBatteryPercentage();
                 }
             }
         }

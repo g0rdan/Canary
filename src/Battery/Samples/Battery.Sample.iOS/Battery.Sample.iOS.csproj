@@ -92,16 +92,16 @@
     </MtouchVerbosity>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Battery.Abstraction, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Canary.Battery.0.9.6\lib\Xamarin.iOS10\Battery.Abstraction.dll</HintPath>
-    </Reference>
-    <Reference Include="Battery.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Canary.Battery.0.9.6\lib\Xamarin.iOS10\Battery.iOS.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Canary.Battery.Abstraction">
+      <HintPath>..\..\packages\Canary.Battery.0.9.8\lib\Xamarin.iOS10\Canary.Battery.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Canary.Battery">
+      <HintPath>..\..\packages\Canary.Battery.0.9.8\lib\Xamarin.iOS10\Canary.Battery.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
