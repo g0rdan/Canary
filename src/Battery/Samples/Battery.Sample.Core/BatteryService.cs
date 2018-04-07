@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Canary.Battery;
+using Canary.Battery.Abstraction;
 
 namespace Battery.Sample.Core
 {
-    public static class BatteryService
+    public class BatteryService
     {
-        public static int GetBatteryPercentage()
-        {
-            var percent = (int)(CanaryBattery.Current.BatteryLevel * 100);
-            return percent;
-        }
+        public bool IsCharging { get { return CanaryBattery.Current.IsCharging; } }
+        public float BatteryLevel { get { return (int)(CanaryBattery.Current.BatteryLevel * 100); } }
+        public string BatteryState { get { return CanaryBattery.Current.BatteryState.ToString(); } }
+        public string PowerType { get { return CanaryBattery.Current.PowerSource.ToString(); } }
+        public IList<(string Key, string Value, string Description)> AddInfo { get { return CanaryBattery.Current.AdditionalInformation; } }
     }
 }

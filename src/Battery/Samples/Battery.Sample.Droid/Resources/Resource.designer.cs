@@ -243,23 +243,23 @@ namespace Battery.Sample.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b000f
-			public const int action0 = 2131427343;
-			
-			// aapt resource value: 0x7f0b000c
-			public const int action_container = 2131427340;
-			
-			// aapt resource value: 0x7f0b0013
-			public const int action_divider = 2131427347;
+			// aapt resource value: 0x7f0b0010
+			public const int action0 = 2131427344;
 			
 			// aapt resource value: 0x7f0b000d
-			public const int action_image = 2131427341;
+			public const int action_container = 2131427341;
+			
+			// aapt resource value: 0x7f0b0014
+			public const int action_divider = 2131427348;
 			
 			// aapt resource value: 0x7f0b000e
-			public const int action_text = 2131427342;
+			public const int action_image = 2131427342;
 			
-			// aapt resource value: 0x7f0b001d
-			public const int actions = 2131427357;
+			// aapt resource value: 0x7f0b000f
+			public const int action_text = 2131427343;
+			
+			// aapt resource value: 0x7f0b001e
+			public const int actions = 2131427358;
 			
 			// aapt resource value: 0x7f0b0006
 			public const int async = 2131427334;
@@ -267,26 +267,26 @@ namespace Battery.Sample.Droid
 			// aapt resource value: 0x7f0b0007
 			public const int blocking = 2131427335;
 			
-			// aapt resource value: 0x7f0b0010
-			public const int cancel_action = 2131427344;
+			// aapt resource value: 0x7f0b0011
+			public const int cancel_action = 2131427345;
 			
-			// aapt resource value: 0x7f0b0018
-			public const int chronometer = 2131427352;
+			// aapt resource value: 0x7f0b0019
+			public const int chronometer = 2131427353;
 			
-			// aapt resource value: 0x7f0b001f
-			public const int end_padder = 2131427359;
+			// aapt resource value: 0x7f0b0020
+			public const int end_padder = 2131427360;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int forever = 2131427336;
 			
+			// aapt resource value: 0x7f0b001b
+			public const int icon = 2131427355;
+			
+			// aapt resource value: 0x7f0b001f
+			public const int icon_group = 2131427359;
+			
 			// aapt resource value: 0x7f0b001a
-			public const int icon = 2131427354;
-			
-			// aapt resource value: 0x7f0b001e
-			public const int icon_group = 2131427358;
-			
-			// aapt resource value: 0x7f0b0019
-			public const int info = 2131427353;
+			public const int info = 2131427354;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int italic = 2131427337;
@@ -297,32 +297,32 @@ namespace Battery.Sample.Droid
 			// aapt resource value: 0x7f0b0001
 			public const int line3 = 2131427329;
 			
-			// aapt resource value: 0x7f0b0012
-			public const int media_actions = 2131427346;
+			// aapt resource value: 0x7f0b000c
+			public const int listview = 2131427340;
 			
-			// aapt resource value: 0x7f0b000b
-			public const int myButton = 2131427339;
+			// aapt resource value: 0x7f0b0013
+			public const int media_actions = 2131427347;
 			
 			// aapt resource value: 0x7f0b000a
 			public const int normal = 2131427338;
 			
-			// aapt resource value: 0x7f0b001c
-			public const int notification_background = 2131427356;
-			
-			// aapt resource value: 0x7f0b0015
-			public const int notification_main_column = 2131427349;
-			
-			// aapt resource value: 0x7f0b0014
-			public const int notification_main_column_container = 2131427348;
-			
-			// aapt resource value: 0x7f0b001b
-			public const int right_icon = 2131427355;
+			// aapt resource value: 0x7f0b001d
+			public const int notification_background = 2131427357;
 			
 			// aapt resource value: 0x7f0b0016
-			public const int right_side = 2131427350;
+			public const int notification_main_column = 2131427350;
 			
-			// aapt resource value: 0x7f0b0011
-			public const int status_bar_latest_event_content = 2131427345;
+			// aapt resource value: 0x7f0b0015
+			public const int notification_main_column_container = 2131427349;
+			
+			// aapt resource value: 0x7f0b001c
+			public const int right_icon = 2131427356;
+			
+			// aapt resource value: 0x7f0b0017
+			public const int right_side = 2131427351;
+			
+			// aapt resource value: 0x7f0b0012
+			public const int status_bar_latest_event_content = 2131427346;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int tag_transition_group = 2131427330;
@@ -333,11 +333,14 @@ namespace Battery.Sample.Droid
 			// aapt resource value: 0x7f0b0004
 			public const int text2 = 2131427332;
 			
-			// aapt resource value: 0x7f0b0017
-			public const int time = 2131427351;
+			// aapt resource value: 0x7f0b0018
+			public const int time = 2131427352;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int title = 2131427333;
+			
+			// aapt resource value: 0x7f0b000b
+			public const int value = 2131427339;
 			
 			static Id()
 			{
@@ -372,52 +375,55 @@ namespace Battery.Sample.Droid
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int Main = 2130968576;
+			public const int cell = 2130968576;
 			
 			// aapt resource value: 0x7f040001
-			public const int notification_action = 2130968577;
+			public const int Main = 2130968577;
 			
 			// aapt resource value: 0x7f040002
-			public const int notification_action_tombstone = 2130968578;
+			public const int notification_action = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int notification_media_action = 2130968579;
+			public const int notification_action_tombstone = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int notification_media_cancel_action = 2130968580;
+			public const int notification_media_action = 2130968580;
 			
 			// aapt resource value: 0x7f040005
-			public const int notification_template_big_media = 2130968581;
+			public const int notification_media_cancel_action = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int notification_template_big_media_custom = 2130968582;
+			public const int notification_template_big_media = 2130968582;
 			
 			// aapt resource value: 0x7f040007
-			public const int notification_template_big_media_narrow = 2130968583;
+			public const int notification_template_big_media_custom = 2130968583;
 			
 			// aapt resource value: 0x7f040008
-			public const int notification_template_big_media_narrow_custom = 2130968584;
+			public const int notification_template_big_media_narrow = 2130968584;
 			
 			// aapt resource value: 0x7f040009
-			public const int notification_template_custom_big = 2130968585;
+			public const int notification_template_big_media_narrow_custom = 2130968585;
 			
 			// aapt resource value: 0x7f04000a
-			public const int notification_template_icon_group = 2130968586;
+			public const int notification_template_custom_big = 2130968586;
 			
 			// aapt resource value: 0x7f04000b
-			public const int notification_template_lines_media = 2130968587;
+			public const int notification_template_icon_group = 2130968587;
 			
 			// aapt resource value: 0x7f04000c
-			public const int notification_template_media = 2130968588;
+			public const int notification_template_lines_media = 2130968588;
 			
 			// aapt resource value: 0x7f04000d
-			public const int notification_template_media_custom = 2130968589;
+			public const int notification_template_media = 2130968589;
 			
 			// aapt resource value: 0x7f04000e
-			public const int notification_template_part_chronometer = 2130968590;
+			public const int notification_template_media_custom = 2130968590;
 			
 			// aapt resource value: 0x7f04000f
-			public const int notification_template_part_time = 2130968591;
+			public const int notification_template_part_chronometer = 2130968591;
+			
+			// aapt resource value: 0x7f040010
+			public const int notification_template_part_time = 2130968592;
 			
 			static Layout()
 			{
