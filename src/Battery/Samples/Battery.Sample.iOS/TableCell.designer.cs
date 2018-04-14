@@ -7,21 +7,24 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace Battery.Sample.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register("TableCell")]
+    partial class TableCell
     {
         [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView TableView { get; set; }
+        [GeneratedCode("iOS Designer", "1.0")]
+        UIKit.UILabel Label { get; set; }
+
+        public UIKit.UILabel PublicLabel { get { return Label; } }
 
         void ReleaseDesignerOutlets ()
         {
-            if (TableView != null) {
-                TableView.Dispose ();
-                TableView = null;
+            if (Label != null) {
+                Label.Dispose ();
+                Label = null;
             }
         }
     }

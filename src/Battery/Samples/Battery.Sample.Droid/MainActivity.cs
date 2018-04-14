@@ -36,10 +36,10 @@ namespace Battery.Sample.Droid
             data.Add(nameof(batteryService.BatteryLevel), batteryService.BatteryLevel.ToString());
             data.Add("BatteryState", batteryService.BatteryState);
             data.Add("PowerType", batteryService.PowerType);
-            //foreach (var item in batteryService.AddInfo)
-            //{
-            //    data.Add(item.Key, item.Value);
-            //}
+            foreach (var item in batteryService.AddInfo)
+            {
+                data.Add(item.Key, item.Value);
+            }
             return data;
         }
 

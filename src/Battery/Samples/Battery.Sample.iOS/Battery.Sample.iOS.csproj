@@ -130,6 +130,10 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableCell.cs" />
+    <Compile Include="TableCell.designer.cs">
+      <DependentUpon>TableCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Battery.Sample.Core\Battery.Sample.Core.csproj">
