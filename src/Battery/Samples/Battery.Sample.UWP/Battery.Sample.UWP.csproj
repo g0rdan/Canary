@@ -132,13 +132,17 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Battery.Core\Battery.Core.csproj">
-      <Project>{7ec09488-40e9-46c1-826a-0d680781bb5e}</Project>
-      <Name>Battery.Core</Name>
+    <ProjectReference Include="..\..\Battery.Abstraction\Battery.Abstraction.csproj">
+      <Project>{9f47cea9-a64c-4d63-8be0-bde38bc060e5}</Project>
+      <Name>Battery.Abstraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Battery.UWP\Battery.UWP.csproj">
       <Project>{199f1fc7-dc1b-409a-965c-d75583f0ab26}</Project>
       <Name>Battery.UWP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Battery\Battery.csproj">
+      <Project>{658574a0-1e69-4906-a231-d36398ae9265}</Project>
+      <Name>Battery</Name>
     </ProjectReference>
     <ProjectReference Include="..\Battery.Sample.Core\Battery.Sample.Core.csproj">
       <Project>{701fbf92-d2e9-40ee-8fb4-6c59eb8a93ac}</Project>

@@ -63,32 +63,32 @@ namespace Canary.Battery
             }
         }
 
-        public IList<(string Key, string Value, string Description)> AdditionalInformation
+        public IList<AdditionalInformation> AdditionalInformation
         {
             get
             {
                 var report = GetAggregateBatteriesReport();
-                var data = new List<(string Key, string Value, string Description)>();
+                var data = new List<AdditionalInformation>();
                 if (report.ChargeRateInMilliwatts.HasValue)
                 {
-                    data.Add((nameof(report.ChargeRateInMilliwatts), report.ChargeRateInMilliwatts.ToString(), "The rate that the battery is charging in milliwatts (mW). This value is negative when the battery is discharging."));
+                    data.Add(new AdditionalInformation(nameof(report.ChargeRateInMilliwatts), report.ChargeRateInMilliwatts.ToString(), "The rate that the battery is charging in milliwatts (mW). This value is negative when the battery is discharging."));
                 }
                 if (report.DesignCapacityInMilliwattHours.HasValue)
                 {
-                    data.Add((nameof(report.DesignCapacityInMilliwattHours), report.DesignCapacityInMilliwattHours.ToString(), "The estimated energy capacity of a new battery of this type, in milliwatt-hours (mWh)."));
+                    data.Add(new AdditionalInformation(nameof(report.DesignCapacityInMilliwattHours), report.DesignCapacityInMilliwattHours.ToString(), "The estimated energy capacity of a new battery of this type, in milliwatt-hours (mWh)."));
                 }
                 if (report.FullChargeCapacityInMilliwattHours.HasValue)
                 {
-                    data.Add((nameof(report.FullChargeCapacityInMilliwattHours), report.FullChargeCapacityInMilliwattHours.ToString(), "The fully-charged energy capacity of the battery, in milliwatt-hours (mWh). Note: Some devices report their battery capacity in milliamp-hours (mAh) instead of mWh. As a rough heuristic, if the value reported is lower than 4400 it is likely represented in mAh, otherwise it is in mWh."));
+                    data.Add(new AdditionalInformation(nameof(report.FullChargeCapacityInMilliwattHours), report.FullChargeCapacityInMilliwattHours.ToString(), "The fully-charged energy capacity of the battery, in milliwatt-hours (mWh). Note: Some devices report their battery capacity in milliamp-hours (mAh) instead of mWh. As a rough heuristic, if the value reported is lower than 4400 it is likely represented in mAh, otherwise it is in mWh."));
                 }
                 if (report.RemainingCapacityInMilliwattHours.HasValue)
                 {
-                    data.Add((nameof(report.RemainingCapacityInMilliwattHours), report.RemainingCapacityInMilliwattHours.ToString(), "The remaining power capacity of the battery, in milliwatt-hours."));
+                    data.Add(new AdditionalInformation(nameof(report.RemainingCapacityInMilliwattHours), report.RemainingCapacityInMilliwattHours.ToString(), "The remaining power capacity of the battery, in milliwatt-hours."));
                 }
                 return data;
             }
         }
-
+        
         // TODO Consider ability to use multiple batteries into plugin
         BatteryReport GetAggregateBatteriesReport()
         {

@@ -26,7 +26,7 @@ namespace Battery.Sample.UWP
         {
             this.InitializeComponent();
 
-            var battery = Sample.Core.Battery.Instance;
+            //var battery = Sample.Core.Battery.Instance;
         }
     }
 }
