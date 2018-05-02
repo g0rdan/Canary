@@ -14,6 +14,11 @@ namespace Canary.SoC
     /// </summary>
     public class CnrSoC : ICnrSoC
     {
+        /// <summary>
+        /// The key for getting information about model name (like "iphone 9,3") from sysctl
+        /// </summary>
+        const string MODEL_KEY = "hw.model";
+
         [DllImport(Constants.SystemLibrary)]
         static internal extern int sysctlbyname([MarshalAs(UnmanagedType.LPStr)] string property, IntPtr output, IntPtr oldLen, IntPtr newp, uint newlen);
 
@@ -21,7 +26,7 @@ namespace Canary.SoC
         {
         }
 
-        public string Model => GetCpuInfo(GetSystemProperty("hw.model")).Name;
+        public string Model => GetCpuInfo(GetSystemProperty(MODEL_KEY)).Name;
 
         public float CurrentFrequency => throw new NotImplementedException();
 
@@ -31,18 +36,18 @@ namespace Canary.SoC
         {
             get 
             {
-                float.TryParse(GetCpuInfo(GetSystemProperty("hw.model")).CPUClock, out float result);
+                float.TryParse(GetCpuInfo(GetSystemProperty(MODEL_KEY)).CPUClock, out float result);
                 return result;
             }
         }
 
         public int Cores => (int)NSProcessInfo.ProcessInfo.ActiveProcessorCount;
 
-        public Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationTokenSource cts = null)
+        public Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationToken token = default(CancellationToken))
         {
             return Task.Factory.StartNew<List<AdditionalInformation>>(() =>
             {
-                var data = GetCpuInfo(GetSystemProperty("hw.model"));
+                var data = GetCpuInfo(GetSystemProperty(MODEL_KEY));
                 var list = new List<AdditionalInformation>();
                 list.Add(new AdditionalInformation { Title = nameof(data.Architecture), Value = data.Architecture });
                 list.Add(new AdditionalInformation { Title = nameof(data.Capacity), Value = data.Capacity });
@@ -50,10 +55,10 @@ namespace Canary.SoC
                 list.Add(new AdditionalInformation { Title = nameof(data.L2Cache), Value = data.L2Cache });
                 list.Add(new AdditionalInformation { Title = nameof(data.L3Cache), Value = data.L3Cache });
                 return list;
-            });
+            }, token);
         }
 
-        public Task<UsageInformation> GetUsageAsync(CancellationTokenSource cts = null)
+        public Task<UsageInformation> GetUsageAsync(CancellationToken token = default(CancellationToken))
         {
             throw new NotImplementedException();
         }

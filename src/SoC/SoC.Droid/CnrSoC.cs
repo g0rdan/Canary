@@ -35,29 +35,14 @@ namespace Canary.SoC
 
         public int Cores => Runtime.GetRuntime().AvailableProcessors();
 
-        public async Task<UsageInformation> GetUsageAsync (CancellationTokenSource cts = null)
+        public async Task<UsageInformation> GetUsageAsync (CancellationToken token = default(CancellationToken))
         {
-            if (cts != null)
-            {
-                return await Task.Factory.StartNew(GetSummaryUsage, cts.Token).ConfigureAwait(false);
-            }
-            else
-            {
-                return await Task.Factory.StartNew(GetSummaryUsage).ConfigureAwait(false);
-            }
-
+            return await Task.Factory.StartNew(GetSummaryUsage, token).ConfigureAwait(false);
         }
 
-        public async Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationTokenSource cts = null)
+        public async Task<List<AdditionalInformation>> GetAdditionalInformationAsync(CancellationToken token = default(CancellationToken))
         {
-            if (cts != null)
-            {
-                return await Task.Factory.StartNew(GetStructedCPUInfo, cts.Token).ConfigureAwait(false);
-            }
-            else
-            {
-                return await Task.Factory.StartNew(GetStructedCPUInfo).ConfigureAwait(false);
-            }
+            return await Task.Factory.StartNew(GetStructedCPUInfo, token).ConfigureAwait(false);
         }
 
         // https://stackoverflow.com/questions/16963292/read-current-cpu-frequency/19858957#19858957
