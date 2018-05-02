@@ -96,12 +96,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Canary.Battery.Abstraction">
-      <HintPath>..\..\packages\Canary.Battery.0.9.8\lib\Xamarin.iOS10\Canary.Battery.Abstraction.dll</HintPath>
-    </Reference>
-    <Reference Include="Canary.Battery">
-      <HintPath>..\..\packages\Canary.Battery.0.9.8\lib\Xamarin.iOS10\Canary.Battery.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

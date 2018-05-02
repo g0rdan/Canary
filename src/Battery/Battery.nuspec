@@ -1,7 +1,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Canary.Battery</id>
-    <version>0.9.8</version>
+    <version>0.1</version>
     <title>Battery information for Xamarin</title>
     <authors>Denis Gordin</authors>
     <owners>Denis Gordin</owners>
@@ -13,8 +13,6 @@
     <tags>xamarin battery monodroid Xamarin.iOS10 ios Xamarin.Android android uwp</tags>
     <iconUrl>https://github.com/g0rdan/Canary/blob/master/logo.png</iconUrl>
     <releaseNotes>
-      [0.9]
-      - test
     </releaseNotes>
     <dependencies>
       <group targetFramework="netstandard2.0">
