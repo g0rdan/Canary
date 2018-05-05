@@ -7,7 +7,7 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Canary.SoC</RootNamespace>
-    <AssemblyName>SoC.Droid</AssemblyName>
+    <AssemblyName>Canary.SoC</AssemblyName>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -53,9 +53,9 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SoC.Core\SoC.Core.csproj">
-      <Project>{71D255F1-8A9E-4EE1-B508-5BA038A2273C}</Project>
-      <Name>SoC.Core</Name>
+    <ProjectReference Include="..\SoC.Abstraction\SoC.Abstraction.csproj">
+      <Project>{35F480D3-21C1-45EB-AA16-ADF05769CD20}</Project>
+      <Name>SoC.Abstraction</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

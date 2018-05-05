@@ -67,10 +67,6 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SoC.Core\SoC.Core.csproj">
-      <Project>{71D255F1-8A9E-4EE1-B508-5BA038A2273C}</Project>
-      <Name>SoC.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\SoC.Droid\SoC.Droid.csproj">
       <Project>{CF28EC36-EC00-4148-94D6-AA85CB231319}</Project>
       <Name>SoC.Droid</Name>

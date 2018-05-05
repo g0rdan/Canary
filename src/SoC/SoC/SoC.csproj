@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Canary.SoC</RootNamespace>
+    <AssemblyName>Canary.SoC</AssemblyName>
   </PropertyGroup>
 
 </Project>

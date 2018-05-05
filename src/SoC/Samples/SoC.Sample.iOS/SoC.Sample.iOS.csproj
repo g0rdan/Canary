@@ -109,10 +109,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SoC.Core\SoC.Core.csproj">
-      <Project>{71D255F1-8A9E-4EE1-B508-5BA038A2273C}</Project>
-      <Name>SoC.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\SoC.iOS\SoC.iOS.csproj">
       <Project>{01F41055-3089-453A-8B5F-60853841F7A5}</Project>
       <Name>SoC.iOS</Name>
