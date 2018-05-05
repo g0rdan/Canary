@@ -39,7 +39,7 @@ namespace Battery.Sample.iOS
             {
                 foreach (var item in batteryService.AddInfo)
                 {
-                    data.Add(item.Key, item.Value);
+                    data.Add(item.Title, item.Value);
                 }
             }
             catch (NotImplementedException ex)

@@ -8,6 +8,9 @@
     <AssemblyName>Canary.Battery</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Exceptions\CanaryNotImplementedException.cs" />
   </ItemGroup>

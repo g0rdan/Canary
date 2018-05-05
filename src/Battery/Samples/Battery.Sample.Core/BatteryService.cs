@@ -11,6 +11,6 @@ namespace Battery.Sample.Core
         public float BatteryLevel { get { return (int)(CanaryBattery.Current.BatteryLevel * 100); } }
         public string BatteryState { get { return CanaryBattery.Current.BatteryState.ToString(); } }
         public string PowerType { get { return CanaryBattery.Current.PowerSource.ToString(); } }
-        public IList<(string Key, string Value, string Description)> AddInfo { get { return CanaryBattery.Current.AdditionalInformation; } }
+        public IList<AdditionalInformation> AddInfo { get { return CanaryBattery.Current.AdditionalInformation; } }
     }
 }

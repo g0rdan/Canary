@@ -38,7 +38,7 @@ namespace Battery.Sample.Droid
             data.Add("PowerType", batteryService.PowerType);
             foreach (var item in batteryService.AddInfo)
             {
-                data.Add(item.Key, item.Value);
+                data.Add(item.Title, item.Value);
             }
             return data;
         }

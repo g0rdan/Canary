@@ -26,7 +26,7 @@ namespace SoC.Sample.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Canary.SoC.Droid.Resource.String.library_name = global::SoC.Sample.Droid.Resource.String.library_name;
+			global::Canary.SoC.Resource.String.library_name = global::SoC.Sample.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Attribute

@@ -74,10 +74,10 @@
       <HintPath>..\..\packages\Xamarin.Android.Support.v4.27.0.2\lib\MonoAndroid81\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Canary.Battery.Abstraction">
-      <HintPath>..\..\packages\Canary.Battery.0.9.8\lib\MonoAndroid10\Canary.Battery.Abstraction.dll</HintPath>
+      <HintPath>..\..\packages\Canary.Battery.0.1.2\lib\MonoAndroid10\Canary.Battery.Abstraction.dll</HintPath>
     </Reference>
     <Reference Include="Canary.Battery">
-      <HintPath>..\..\packages\Canary.Battery.0.9.8\lib\MonoAndroid10\Canary.Battery.dll</HintPath>
+      <HintPath>..\..\packages\Canary.Battery.0.1.2\lib\MonoAndroid10\Canary.Battery.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
