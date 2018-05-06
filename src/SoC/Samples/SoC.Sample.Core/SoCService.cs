@@ -13,18 +13,18 @@ namespace SoC.Sample.Core
         public float MinFrequency { get { return CanarySoC.Current.MinFrequency; } }
         public int Cores { get { return CanarySoC.Current.Cores; } }
 
-        public async Task<List<string>> GetAddInfo()
+        public async Task<Dictionary<string, string>> GetAddInfo()
         {
-            var result = new List<string>();
+            var dict = new Dictionary<string, string>();
             var data = await CanarySoC.Current.GetAdditionalInformationAsync();
             if (data != null && data.Any())
             {
                 foreach (var item in data)
                 {
-                    result.Add($"{item.Title}: {item.Value}");
+                    dict.Add(item.Title, item.Value);
                 }
             }
-            return result;
+            return dict;
         }
     }
 }

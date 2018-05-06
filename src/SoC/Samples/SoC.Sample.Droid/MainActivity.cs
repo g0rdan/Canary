@@ -1,30 +1,44 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Canary.SoC.Droid;
+using SoC.Sample.Core;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SoC.Sample.Droid
 {
     [Activity(Label = "SoC.Sample.Droid", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        ListView _listView;
+        Dictionary<string, string> _data = new Dictionary<string, string>();
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            var data = await GetData();
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
+            _listView = FindViewById<ListView>(Resource.Id.listview);
+            _listView.Adapter = new Adapter(data);
+        }
 
-            button.Click += delegate { button.Text = $"{count++} clicks!"; };
-
-            //SoC.Sample.Core.SoC.Instance = new CnrSoC();
-            var data = new CnrSoC();
+        async Task<Dictionary<string, string>> GetData()
+        {
+            var socService = new SoCService();
+            var data = new Dictionary<string, string>();
+            data.Add(nameof(socService.Model), socService.Model);
+            data.Add(nameof(socService.Cores), socService.Cores.ToString());
+            data.Add(nameof(socService.MinFrequency), socService.MinFrequency.ToString());
+            data.Add(nameof(socService.MaxFrequency), socService.MaxFrequency.ToString());
+            var addData = await socService.GetAddInfo();
+            foreach (var item in addData)
+            {
+                data.Add(item.Key, item.Value);
+            }
+            return data;
         }
     }
 }
