@@ -90,6 +90,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Canary.SoC.Abstraction">
+      <HintPath>..\..\packages\Canary.SoC.0.1.1\lib\Xamarin.iOS10\Canary.SoC.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Canary.SoC">
+      <HintPath>..\..\packages\Canary.SoC.0.1.1\lib\Xamarin.iOS10\Canary.SoC.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -109,6 +115,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -119,14 +126,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SoC.iOS\SoC.iOS.csproj">
-      <Project>{01F41055-3089-453A-8B5F-60853841F7A5}</Project>
-      <Name>SoC.iOS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SoC.Sample.Core\SoC.Sample.Core.csproj">
       <Project>{092B0516-0C4C-4404-B25A-CB550B1DA89A}</Project>
       <Name>SoC.Sample.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>

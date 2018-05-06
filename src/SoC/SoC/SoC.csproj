@@ -6,4 +6,7 @@
     <AssemblyName>Canary.SoC</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SoC.Abstraction\SoC.Abstraction.csproj" />
+  </ItemGroup>
 </Project>

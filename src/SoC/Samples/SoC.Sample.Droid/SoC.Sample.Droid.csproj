@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SoC.Sample.Droid</RootNamespace>
     <AssemblyName>SoC.Sample.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Canary.SoC.Abstraction">
+      <HintPath>..\..\packages\Canary.SoC.0.1.1\lib\MonoAndroid10\Canary.SoC.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Canary.SoC">
+      <HintPath>..\..\packages\Canary.SoC.0.1.1\lib\MonoAndroid10\Canary.SoC.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -53,6 +59,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -67,14 +74,11 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SoC.Droid\SoC.Droid.csproj">
-      <Project>{CF28EC36-EC00-4148-94D6-AA85CB231319}</Project>
-      <Name>SoC.Droid</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SoC.Sample.Core\SoC.Sample.Core.csproj">
       <Project>{092B0516-0C4C-4404-B25A-CB550B1DA89A}</Project>
       <Name>SoC.Sample.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>
