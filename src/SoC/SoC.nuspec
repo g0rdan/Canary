@@ -11,7 +11,7 @@
     <description>Shows certain information about CPU/GPU on a device.</description>
     <summary>Shows certain information about CPU/GPU on a device.</summary>
     <tags>xamarin cpu gpu soc monodroid Xamarin.iOS10 ios Xamarin.Android android uwp</tags>
-    <iconUrl>https://github.com/g0rdan/Canary/blob/master/logo.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/g0rdan/Canary/master/logo.png</iconUrl>
     <releaseNotes>
     </releaseNotes>
     <dependencies>
