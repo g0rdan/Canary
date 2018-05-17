@@ -21,16 +21,16 @@ namespace Canary.SoC
 
         [DllImport(Constants.SystemLibrary)]
         static internal extern int sysctlbyname([MarshalAs(UnmanagedType.LPStr)] string property, IntPtr output, IntPtr oldLen, IntPtr newp, uint newlen);
-
-        public CnrSoC()
-        {
-        }
-
-        public string Model => GetCpuInfo(GetSystemProperty(MODEL_KEY)).Name;
-
-        public float CurrentFrequency => throw new NotImplementedException();
-
-        public float MinFrequency => throw new NotImplementedException();
+        
+        public string Model => GetCpuInfo(GetSystemProperty(MODEL_KEY)).Name;      
+        /// <summary>
+        /// Doesn't support in iOS
+        /// </summary>
+        public float CurrentFrequency => 0f;      
+		/// <summary>
+        /// Doesn't support in iOS
+        /// </summary>
+        public float MinFrequency => 0f;
 
         public float MaxFrequency
         {
@@ -60,7 +60,7 @@ namespace Canary.SoC
 
         public Task<UsageInformation> GetUsageAsync(CancellationToken token = default(CancellationToken))
         {
-            throw new NotImplementedException();
+			return null;
         }
 
         /// <summary>
