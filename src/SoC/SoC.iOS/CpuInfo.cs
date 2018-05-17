@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Canary.SoC
 {
-    internal class CpuInfo
+	internal struct CpuInfo
     {
         /// <summary>
         /// CPU click in Mhz
@@ -26,9 +26,5 @@ namespace Canary.SoC
         /// </summary>
         public string Capacity { get; set; }
         public string Architecture { get; set; }
-
-        public CpuInfo()
-        {
-        }
     }
 }

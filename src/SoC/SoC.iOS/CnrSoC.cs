@@ -171,7 +171,7 @@ namespace Canary.SoC
                 case "iPhone10,5":
                     return new CpuInfo { CPUClock = "2390", Capacity = "64", L1Cache = "64+64", L2Cache = "8192", L3Cache = "", Name = "Apple A11 Bionic", Architecture = "ARMv8-A" };
                 default:
-                    return null;
+					return default(CpuInfo);
             }
         }
     }
